@@ -1,0 +1,9 @@
+tmp/*
+mongodb24/primary/data/db/*
+mongodb24/primary/data/log/*
+mongodb24/secondary/data/db/*
+mongodb24/secondary/data/log/*
+mongodb4/primary/data/db/*
+mongodb4/primary/data/log/*
+
+
