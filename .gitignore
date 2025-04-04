@@ -1,9 +1,19 @@
 tmp/*
+!tmp/.gitkeep
+
 mongodb24/primary/data/db/*
+!mongodb24/primary/data/db/.gitkeep
 mongodb24/primary/data/log/*
+!mongodb24/primary/data/log/.gitkeep
+
 mongodb24/secondary/data/db/*
+!mongodb24/secondary/data/db/.gitkeep
 mongodb24/secondary/data/log/*
+!mongodb24/secondary/data/log/.gitkeep
+
 mongodb4/primary/data/db/*
+!mongodb4/primary/data/db/.gitkeep
 mongodb4/primary/data/log/*
+!mongodb4/primary/data/log/.gitkeep
 
 
