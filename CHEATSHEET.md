@@ -5,12 +5,17 @@ Bash接続する
 docker-compose exec mongodb24-primary /bin/sh
 docker-compose exec mongodb24-secondary /bin/sh
 docker-compose exec mongodb4-primary /bin/sh
+docker-compose exec mongodb8-primary /bin/sh
 ```
 
 Mongoに入る
 
 ```
+# 2.4, 4
 mongo
+
+# 8
+mongosh
 ```
 
 
@@ -141,15 +146,16 @@ Fri Apr  4 05:55:53.406 		 1 objects
 Fri Apr  4 05:55:53.407 	Metadata for test.users to /tmp/test/users.metadata.json
 ```
 
-4へリストアする
+2.4のダンプファイルを修正
+(2.4の形式から4や8へリストアするとエラーになる場合があるため、補正)
 
 ```
-# mongorestore --db test /tmp/test --drop
-2025-04-04T05:58:39.448+0000	The --db and --collection flags are deprecated for this use-case; please use --nsInclude instead, i.e. with --nsInclude=${DATABASE}.${COLLECTION}
-2025-04-04T05:58:39.448+0000	building a list of collections to restore from /tmp/test dir
-2025-04-04T05:58:39.459+0000	reading metadata for test.users from /tmp/test/users.metadata.json
-2025-04-04T05:58:39.499+0000	restoring test.users from /tmp/test/users.bson
-2025-04-04T05:58:39.512+0000	finished restoring test.users (1 document, 0 failures)
-2025-04-04T05:58:39.513+0000	no indexes to restore for collection test.users
-2025-04-04T05:58:39.513+0000	1 document(s) restored successfully. 0 document(s) failed to restore.
+python metadata.py
+```
+
+
+4や8へリストアする
+
+```
+# mongorestore --db test /tmp/dump/test --drop
 ```

@@ -52,3 +52,13 @@ services:
     ports:
       - 27019:27017
     restart: always
+
+  mongodb8-primary:
+    image: mongo:8.0.6
+    volumes:
+      - ./mongodb8/primary/data/db:/data/db
+      - ./mongodb8/primary/data/log:/var/log/mongodb
+      - ./tmp:/tmp
+    ports:
+      - 27020:27017
+    restart: always

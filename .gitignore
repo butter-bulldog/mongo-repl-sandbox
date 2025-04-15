@@ -16,4 +16,9 @@ mongodb4/primary/data/db/*
 mongodb4/primary/data/log/*
 !mongodb4/primary/data/log/.gitkeep
 
+mongodb8/primary/data/db/*
+!mongodb8/primary/data/db/.gitkeep
+mongodb8/primary/data/log/*
+!mongodb8/primary/data/log/.gitkeep
+
 
